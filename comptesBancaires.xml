@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Comptes>
   <Compte>
-    <numCompte>456</numCompte>
-    <nomProprietaire>Cyril</nomProprietaire>
-    <solde>600.0</solde>
-    <typeCompte>epargne</typeCompte>
-  </Compte>
-  <Compte>
-    <numCompte>250</numCompte>
+    <numCompte>258</numCompte>
     <nomProprietaire>Molida</nomProprietaire>
     <solde>900.0</solde>
     <typeCompte>epargne</typeCompte>
+    <date>2023-12-08</date>
+  </Compte>
+  <Compte>
+    <numCompte>369</numCompte>
+    <nomProprietaire>Cyril</nomProprietaire>
+    <solde>1000.0</solde>
+    <typeCompte>courant</typeCompte>
+    <date>2023-12-08</date>
   </Compte>
 </Comptes>

@@ -1,6 +1,7 @@
 package com.soprasteria.javaxml2;
 
 import java.io.File;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,12 +30,16 @@ public class AffichageCompte {
             List < CompteBancaire > compteBancaires = new ArrayList<>();
             for(Element element : listOfCompteBancaires)
             {
-            	CompteBancaire animal = new CompteBancaire();
-            	animal.setNumCompte(Integer.parseInt(element.getChildText("numCompte")));
-            	animal.setNomProprietaire(element.getChildText("nomProprietaire"));
-            	animal.setSolde(Double.parseDouble(element.getChildText("solde")));
-				animal.setTypeCompte(element.getChildText("typeCompte"));
-				compteBancaires.add(animal);
+            	CompteBancaire compte = new CompteBancaire();
+            	compte.setNumCompte(Integer.parseInt(element.getChildText("numCompte")));
+            	compte.setNomProprietaire(element.getChildText("nomProprietaire"));
+            	compte.setSolde(Double.parseDouble(element.getChildText("solde")));
+				compte.setTypeCompte(element.getChildText("typeCompte"));
+				compte.setDate(LocalDate.parse(element.getChildText("date")));
+				
+				if (compte.getTypeCompte().equals("courant")) {
+					compteBancaires.add(compte);
+				}
             }
             
             System.out.println(compteBancaires);

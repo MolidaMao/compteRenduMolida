@@ -2,6 +2,7 @@ package com.soprasteria.javaxml2;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.Scanner;
 
 import org.jdom2.Document;
@@ -51,6 +52,7 @@ public class MainCompteBancaire {
 		compteElement.addContent(new Element("nomProprietaire").setText(compte.getNomProprietaire()));
 		compteElement.addContent(new Element("solde").setText("" + compte.getSolde()));
 		compteElement.addContent(new Element("typeCompte").setText(compte.getTypeCompte()));
+		compteElement.addContent(new Element("date").setText(compte.getDate().toString()));
 		return compteElement;
 	}
 	
@@ -64,9 +66,11 @@ public class MainCompteBancaire {
 		Double solde = clavier.nextDouble();
 		System.out.println("Saisir le type du compte :");
 		String typeCompte = clavier.next();
+		
+		LocalDate dateCreation = LocalDate.now();
 
 		// Creation des objets de type CompteBancaire
-		CompteBancaire c = new CompteBancaire(numCompte, nomProprietaire, solde, typeCompte);
+		CompteBancaire c = new CompteBancaire(numCompte, nomProprietaire, solde, typeCompte,dateCreation);
 		return c;
 	}
 }

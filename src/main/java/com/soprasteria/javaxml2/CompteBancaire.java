@@ -1,5 +1,6 @@
 package com.soprasteria.javaxml2;
 
+import java.time.LocalDate;
 
 public class CompteBancaire {
 
@@ -7,6 +8,8 @@ public class CompteBancaire {
 	private String nomProprietaire;
 	private Double solde;
 	private String typeCompte;
+	private LocalDate date;
+	
 	public int getNumCompte() {
 		return numCompte;
 	}
@@ -33,22 +36,32 @@ public class CompteBancaire {
 		this.typeCompte = typeCompte;
 	}
 
+	
+	public LocalDate getDate() {
+		return date;
+	}
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
 	public CompteBancaire() {
 		
 	}
-	
-	public CompteBancaire(int numCompte, String nomProprietaire, Double solde, String typeCompte) {
+	public CompteBancaire(int numCompte, String nomProprietaire, Double solde, String typeCompte, LocalDate date) {
 		super();
 		this.numCompte = numCompte;
 		this.nomProprietaire = nomProprietaire;
 		this.solde = solde;
 		this.typeCompte = typeCompte;
+		this.date = date;
 	}
 	@Override
 	public String toString() {
 		return "CompteBancaire [numCompte=" + numCompte + ", nomProprietaire=" + nomProprietaire + ", solde=" + solde
-				+ ", typeCompte=" + typeCompte + "]";
+				+ ", typeCompte=" + typeCompte + ", date=" + date.toString() + "]";
 	}
+	
+
+
 
 
 }
