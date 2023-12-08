@@ -33,6 +33,10 @@ public class CompteBancaire {
 		this.typeCompte = typeCompte;
 	}
 
+	public CompteBancaire() {
+		
+	}
+	
 	public CompteBancaire(int numCompte, String nomProprietaire, Double solde, String typeCompte) {
 		super();
 		this.numCompte = numCompte;
