@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Comptes>
+  <Compte>
+    <numCompte>123</numCompte>
+    <nomProprietaire>Molida</nomProprietaire>
+    <solde>500.0</solde>
+    <typeCompte>Epargne</typeCompte>
+  </Compte>
+  <Compte>
+    <numCompte>123</numCompte>
+    <nomProprietaire>Molida</nomProprietaire>
+    <solde>500.0</solde>
+    <typeCompte>Epargne</typeCompte>
+  </Compte>
+</Comptes>
