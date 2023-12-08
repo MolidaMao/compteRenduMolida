@@ -22,19 +22,10 @@ public class MainCompteBancaire {
 		//Lire les infos du clavier
 
 		try {
-			Scanner clavier = new Scanner(System.in); 
-			System.out.println("Saisir un numéro de compte :");
-			int numCompte = clavier.nextInt();
-			System.out.println("Saisir un nom :");
-			String nomProprietaire = clavier.next();
-			System.out.println("Saisir un solde :");
-			Double solde = clavier.nextDouble();
-			System.out.println("Saisir le type du compte :");
-			String typeCompte = clavier.next();
 
 			// Creation des objets de type CompteBancaire
-			CompteBancaire c1 = new CompteBancaire(numCompte, nomProprietaire, solde, typeCompte);
-			CompteBancaire c2 = new CompteBancaire(numCompte, nomProprietaire, solde, typeCompte);
+			CompteBancaire c1 = createCompteBancaire();
+			CompteBancaire c2 = createCompteBancaire();
 			
 			//Attacher les deux élements à l'élement racine Compte
 			doc.getRootElement().addContent(createCompteXMLElement(c1));
@@ -61,5 +52,21 @@ public class MainCompteBancaire {
 		compteElement.addContent(new Element("solde").setText("" + compte.getSolde()));
 		compteElement.addContent(new Element("typeCompte").setText(compte.getTypeCompte()));
 		return compteElement;
+	}
+	
+	private static CompteBancaire createCompteBancaire() {
+		Scanner clavier = new Scanner(System.in); 
+		System.out.println("Saisir un numéro de compte :");
+		int numCompte = clavier.nextInt();
+		System.out.println("Saisir un nom :");
+		String nomProprietaire = clavier.next();
+		System.out.println("Saisir un solde :");
+		Double solde = clavier.nextDouble();
+		System.out.println("Saisir le type du compte :");
+		String typeCompte = clavier.next();
+
+		// Creation des objets de type CompteBancaire
+		CompteBancaire c = new CompteBancaire(numCompte, nomProprietaire, solde, typeCompte);
+		return c;
 	}
 }
